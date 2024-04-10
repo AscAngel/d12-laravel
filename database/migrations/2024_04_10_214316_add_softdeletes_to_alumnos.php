@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comentarios', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->text('comentario');
-            $table->string('ciudad');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('alumnos', function (Blueprint $table) {
+            //
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comentarios');
+        Schema::table('alumnos', function (Blueprint $table) {
+            //
+        });
     }
 };
