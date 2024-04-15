@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Alumno;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AlumnoController extends Controller
 {
@@ -80,6 +81,8 @@ class AlumnoController extends Controller
 
         // $alumno->materias()->attach($materia_id);
         $alumno->materias()->sync($materia_id);
+
+        Mail::to($alumno->correo)->send(new NotificaMaterias($alumno));
 
         return redirect()->route('alumnos.show', $alumno_id);
     }
