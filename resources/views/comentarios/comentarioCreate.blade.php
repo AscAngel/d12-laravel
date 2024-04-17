@@ -2,7 +2,7 @@
 
     @include('parciales.form-error')
 
-    <form action="{{ route('comentario.store') }}" method="POST">
+    <form action="{{ route('comentario.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" value="{{ old('nombre') }}">
