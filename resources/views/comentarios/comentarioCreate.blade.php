@@ -27,6 +27,10 @@
             <option value="Zapopan" @selected(old('ciudad') == 'Zapopan')>Zapopan</option>
             <option value="Tonalá" @selected(old('ciudad') == 'Tonalá')>Tonalá</option>
         </select>
+        <br><br>
+        <input type="file" name="archivo">
+        <br>
+        <hr>
         <input type="submit" value="Enviar">
     </form>
 </x-mi-layout>

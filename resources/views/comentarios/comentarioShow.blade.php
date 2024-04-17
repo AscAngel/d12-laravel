@@ -16,5 +16,20 @@
         <li>Ciudad: {{ $comentario->ciudad }}</li>
     </ul>
 
+    <h2>Archivos</h2>
+
+    <ul>
+        @foreach ($comentario->archivos as $archivo)
+            <li>
+                <a href="{{ route('archivo.download', $archivo }}">
+                    Descargar imagen
+                </a>
+                <br>
+                <p>Imagen: {{ $archivo->nombre_original }}</p>
+                <img src="{{ \Storage::url($archivo->ubicacion) }}" alt="Imagen" width="300px">
+            </li>
+        @endforeach
+    </ul>
+
 </body>
 </html>

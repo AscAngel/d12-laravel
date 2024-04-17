@@ -19,4 +19,8 @@ class Comentario extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function archivos(){
+        return $this->hasMany(Archivo::class);
+    }
 }

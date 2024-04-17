@@ -27,6 +27,8 @@ Route::get('/info/{tipo?}', [SitioController::class, 'info']);
 // Route::get('/comentario/create', [ComentarioController::class, 'create']);
 // Route::post('/comentario-guarda', [ComentarioController::class, 'store']);
 Route::resource('comentario', ComentarioController::class);
+Route::get('/comentario/download/{archivo}', [ComentarioController::class, 'download'])
+      ->name('comentario.download');
 route::resource('alumno', AlumnoController::class);
 route::get('/alumno/{alumno}/agendar-materia', [AlumnoController::class, 'agendarMateria'])->name('alumno.agendar-materia');
 route::post('/alumno/{alumno}/relacionar-materia', [AlumnoController::class, 'relacionarMateriaConalumno'])->name('alumno.relacionar-materia-alumno');
