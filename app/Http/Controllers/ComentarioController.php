@@ -28,7 +28,9 @@ class ComentarioController extends Controller
         //     ->get();
 
         // $comentarios = Auth::user()->comentarios;
-        $comentarios = Comentario::all();
+        // $comentarios = Comentario::all();
+        $comentarios = Comentario::with('user:id,name,email')->limit(5)->get();
+        dd($comentarios);
 
         return view('comentarios/comentarioIndex', compact('comentarios'));
     }
