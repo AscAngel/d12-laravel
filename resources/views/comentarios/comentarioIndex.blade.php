@@ -1,4 +1,4 @@
-<x-mi-layout titulo="Listado Comentarios">
+<x-mi-layout titulo="Listado de Comentarios">
     <a class="btn btn-primary" href="{{ route('comentario.create') }}">Nuevo Comentario</a>
     
     <table class="table">
